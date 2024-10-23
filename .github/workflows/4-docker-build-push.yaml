@@ -1,8 +1,7 @@
 name: 4-Docker-login
 
 on:
-  push:
-    branches: main
+  workflow_dispatch:
 
 jobs:
   login:
