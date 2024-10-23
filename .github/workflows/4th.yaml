@@ -1,0 +1,32 @@
+name: 3rdworkflow
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout-repo
+        uses: actions/checkout@v4
+        with:
+          repository: fazlan1990/slack
+          sparse-checkout: |
+               deploy
+               Dockerfile
+          sparse-checkout-cone-mode: false    // Only download above specified files/folders
+          ref: main
+          
+      
+      - name: Welcome message
+        run: echo "My first GitHub Actions Job"
+      
+      - name: List files
+        run: ls 
+
+      - name: List files
+        run: ls -l  deploy
+      
+        
+    
