@@ -15,7 +15,7 @@ jobs:
           sparse-checkout: |
                deploy
                Dockerfile
-          sparse-checkout-cone-mode: false
+          sparse-checkout-cone-mode: false    // Only download above specified files/folders
           ref: main
           
       
