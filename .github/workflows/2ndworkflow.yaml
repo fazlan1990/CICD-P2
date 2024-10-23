@@ -1,1 +1,23 @@
+name: 2nd Workflow
 
+on: 
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout-repo
+        uses: actions/checkout@v4
+        with:
+          repository: fazlan1990/terraform-azure-P1
+      
+      - name: Welcome message
+        run: echo "My first GitHub Actions Job"
+      
+      - name: List files
+        run: ls
+        
+      - name: Read file
+        run: cat README.md
