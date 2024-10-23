@@ -1,4 +1,4 @@
-name: 4thworkflow
+name: 4-docker build & push
 
 on: 
   workflow_dispatch:
