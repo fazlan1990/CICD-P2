@@ -1,4 +1,4 @@
-name: 4-Docker-login
+name: 4-Docker-login-bild-push
 
 on:
   workflow_dispatch:
