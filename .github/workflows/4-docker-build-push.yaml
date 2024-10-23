@@ -13,3 +13,20 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASS }}
+
+      - name: checkoutrepo
+        uses: actions/checkout@v4 
+        with:
+          repository: fazlan1990/slack
+
+      - name: list files
+        run: ls -l
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: . 
+          push: true
+          tags: fazlan1990/hello-world:100
+
+        
