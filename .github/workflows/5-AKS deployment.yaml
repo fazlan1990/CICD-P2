@@ -54,4 +54,5 @@ jobs:
           namespace: 'default'
           manifests: |
              deployment.yml
+             service.yml
     
