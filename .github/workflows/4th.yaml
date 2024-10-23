@@ -1,4 +1,4 @@
-name: 4thdworkflow
+name: 4thworkflow
 
 on: 
   workflow_dispatch:
