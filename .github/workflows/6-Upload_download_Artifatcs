@@ -1,0 +1,35 @@
+name: 6-Upload_download_artifacts
+on:
+   - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Create a text file
+        run: 'echo "Hello, world faslan!" > hello.txt'
+        
+      - name: Archive text file
+        uses: actions/upload-artifact@v4
+        with:
+          name: hello-artifact
+          path: hello.txt
+          
+  download: 
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Download text file
+        uses: actions/download-artifact@v4
+        with:
+          name: hello-artifact
+          path: ./faslan/folder/
+
+      - name: List files
+        run: ls -al
+          
+      - name: Display content of the text file
+        run: cat ./faslan/folder/hello.txt
