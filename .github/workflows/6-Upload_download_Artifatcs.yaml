@@ -1,6 +1,6 @@
 name: 6-Upload_download_artifacts
 on:
-   - push
+   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
