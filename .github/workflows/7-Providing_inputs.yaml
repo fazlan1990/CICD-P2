@@ -1,0 +1,33 @@
+name: 7-Providing_inputs
+on:
+  workflow_dispatch:
+    inputs:
+      run-job:
+        description: "Run Specific Job"
+        type: boolean
+      
+      custom_message:
+        description: "Enter a custom message"
+        type: string
+        required: true
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run when specific job is true
+        if: ${{ inputs.run-job == true }} 
+        run: echo "Box has been checked"
+      
+      - name: Run when specific job is false
+        if: ${{ inputs.run-job == false }} 
+        run: echo "Box has been unchecked"
+  
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing Custom Message
+        run: echo ${{inputs.custom_message}}
+      
+      - name: Printing run-job boolean value
+        run: echo ${{ inputs.run-job }}
